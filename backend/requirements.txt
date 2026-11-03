@@ -1,0 +1,5 @@
+tensorflow>=2.21  # Python 3.10-3.12
+fastapi>=0.162
+uvicorn[standard]>=0.54
+pandas>=2.3.3
+numpy>=1.26

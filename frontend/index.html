@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estimasi Harga Rumah California — MLP Regresi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🏠 Estimasi Harga Rumah California</h1>
+    <p>MLP Regresi (output linear · loss MSE · metrik MAE · L2 + Dropout)</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Input Data Wilayah</h2>
+      <form id="form">
+        <label>Pilih lokasi cepat
+          <select id="preset">
+            <option value="">— isi manual —</option>
+            <option value="34.05,-118.24,<1H OCEAN">Los Angeles</option>
+            <option value="37.77,-122.42,NEAR BAY">San Francisco</option>
+            <option value="32.72,-117.16,NEAR OCEAN">San Diego</option>
+            <option value="38.58,-121.49,INLAND">Sacramento</option>
+            <option value="36.74,-119.79,INLAND">Fresno</option>
+          </select>
+        </label>
+        <div class="grid">
+          <label>Latitude <input type="number" step="any" name="latitude" value="34.05" required></label>
+          <label>Longitude <input type="number" step="any" name="longitude" value="-118.24" required></label>
+          <label>Dekat laut?
+            <select name="ocean_proximity">
+              <option value="<1H OCEAN">&lt; 1 jam dari laut</option>
+              <option value="INLAND">Daratan (inland)</option>
+              <option value="NEAR OCEAN">Dekat laut</option>
+              <option value="NEAR BAY">Dekat teluk</option>
+              <option value="ISLAND">Pulau</option>
+            </select>
+          </label>
+          <label>Umur median rumah (tahun) <input type="number" name="housing_median_age" value="30" min="1" max="100" required></label>
+          <label>Total kamar <input type="number" name="total_rooms" value="2500" min="1" required></label>
+          <label>Total kamar tidur <input type="number" name="total_bedrooms" value="500" min="1" required></label>
+          <label>Populasi <input type="number" name="population" value="1200" min="1" required></label>
+          <label>Jumlah rumah tangga <input type="number" name="households" value="450" min="1" required></label>
+          <label>Pendapatan median (USD/tahun) <input type="number" name="income_usd" value="55000" min="1000" step="500" required></label>
+        </div>
+        <button type="submit" id="btn">Prediksi Harga</button>
+      </form>
+      <div id="result" class="result hidden"></div>
+      <div id="error" class="error hidden"></div>
+    </section>
+
+    <section class="card">
+      <h2>Performa Model (data uji)</h2>
+      <div id="metrics" class="metrics">Memuat…</div>
+      <canvas id="chart" height="160"></canvas>
+    </section>
+
+    <section class="card wide">
+      <div class="row">
+        <h2>Riwayat Prediksi (Database)</h2>
+        <button id="clear" class="ghost">Hapus riwayat</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Waktu</th><th>Lat, Lon</th><th>Umur</th><th>Kamar</th><th>Populasi</th><th>Income</th><th>Lokasi</th><th>Prediksi</th></tr></thead>
+          <tbody id="history"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>Dataset: California Housing Prices (Kaggle) · Prediksi bersifat estimasi untuk satu blok wilayah, bukan penilaian properti resmi.</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
