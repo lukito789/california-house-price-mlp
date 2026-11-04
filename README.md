@@ -53,7 +53,7 @@ Disarankan memakai Python 3.12.
  .venv\Scripts\activate
 - **macOS / Linux**
 
-5. - source .venv/bin/activate
+  source .venv/bin/activate
 
 6. - pip install -r requirements.txt
 
