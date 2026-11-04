@@ -45,18 +45,19 @@ Menyimpan visualisasi hasil analisis, preprocessing, evaluasi model, eksperimen,
 ## CARA MENJALANKAN
 Disarankan memakai Python 3.12.
 
-git clone https://github.com/lukito789/california-house-price-mlp.git
-cd california-house-price-mlp
+- git clone https://github.com/lukito789/california-house-price-mlp.git
+- cd california-house-price-mlp
+- python -m venv .venv
+- **Windows**
 
-python -m venv .venv
-**Windows**
-.venv\Scripts\activate
-**macOS / Linux**
-source .venv/bin/activate
+- .venv\Scripts\activate
+- **macOS / Linux**
 
-pip install -r requirements.txt
+- source .venv/bin/activate
 
-streamlit run backend/streamlit_app.py
+- pip install -r requirements.txt
+
+- streamlit run backend/streamlit_app.py
 
 ## RINGKASAN PREPROCESSING
 
