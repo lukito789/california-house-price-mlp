@@ -1,0 +1,23 @@
+{
+  "fitur": "interval prediksi (split conformal prediction)",
+  "tanggal": "2026-11-04",
+  "metode": "relatif",
+  "alpha_utama": 0.1,
+  "n_kalibrasi": 3096,
+  "q": {
+    "0.2": 0.24524168471508603,
+    "0.1": 0.3543707545753755,
+    "0.05": 0.4907899045488566
+  },
+  "floor_usd": 20000.0,
+  "mc": null,
+  "model_sumber": "backend",
+  "model_file": "backend/artifacts/model.keras",
+  "model_sha256": "c92019c4c5eaaebd2fe9115078c4654f4351ba889f0276ae728e1b2764d5089c",
+  "cakupan_test": {
+    "alpha": 0.1,
+    "cakupan": 0.897965773329028,
+    "lebar_rata2_usd": 145836.25218397705
+  },
+  "catatan": "q hanya valid untuk model dengan SHA-256 di atas. Jaminan berlaku untuk cakupan rata-rata, bukan per kelompok."
+}

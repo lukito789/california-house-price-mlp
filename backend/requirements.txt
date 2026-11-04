@@ -3,3 +3,4 @@ fastapi>=0.162
 uvicorn[standard]>=0.54
 pandas>=2.3.3
 numpy>=1.26
+streamlit>=1.40  # aplikasi backend/streamlit_app.py (Streamlit Community Cloud: pilih Python 3.11 atau 3.12)
