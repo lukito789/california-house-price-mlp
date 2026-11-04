@@ -49,9 +49,9 @@ git clone https://github.com/lukito789/california-house-price-mlp.git
 cd california-house-price-mlp
 
 python -m venv .venv
-# Windows
+**Windows**
 .venv\Scripts\activate
-# macOS / Linux
+**macOS / Linux**
 source .venv/bin/activate
 
 pip install -r requirements.txt
