@@ -42,6 +42,7 @@ Target prediksi adalah `median_house_value`.
 **5.reports/**
 Menyimpan visualisasi hasil analisis, preprocessing, evaluasi model, eksperimen, interval prediksi, dan deteksi OOD.
 
+```
 ## CARA MENJALANKAN
 Disarankan memakai Python 3.12.
 
@@ -57,7 +58,9 @@ Disarankan memakai Python 3.12.
 
 6. - pip install -r requirements.txt
 
-7. - streamlit run backend/streamlit_app.py
+```
+Buka folder repository di VSCode, pilih kernel .venv, lalu jalankan notebook di folder notebooks/ secara berurutan.
+
 
 ## RINGKASAN PREPROCESSING
 
