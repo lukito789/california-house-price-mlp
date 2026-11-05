@@ -43,6 +43,11 @@ Target prediksi adalah `median_house_value`.
 **5.reports/**
 Menyimpan visualisasi hasil analisis, preprocessing, evaluasi model, eksperimen, interval prediksi, dan deteksi OOD.
 
+**6.docs/**
+Laporan Estimasi Harga Rumah dengan MLP Regresi.docx: Laporan proyek dalam format Word.
+Laporan Estimasi Harga Rumah dengan MLP Regresi.pdf: Laporan proyek dalam format PDF.
+
+Laporan dapat dibuka langsung melalui tautan berikut: PDF | Word
 
 ## CARA MENJALANKAN
 Disarankan memakai Python 3.12.
