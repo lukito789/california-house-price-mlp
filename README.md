@@ -47,7 +47,6 @@ Menyimpan visualisasi hasil analisis, preprocessing, evaluasi model, eksperimen,
 Laporan Estimasi Harga Rumah dengan MLP Regresi.docx: Laporan proyek dalam format Word.
 Laporan Estimasi Harga Rumah dengan MLP Regresi.pdf: Laporan proyek dalam format PDF.
 
-Laporan dapat dibuka langsung melalui tautan berikut: PDF | Word
 
 ## CARA MENJALANKAN
 Disarankan memakai Python 3.12.
