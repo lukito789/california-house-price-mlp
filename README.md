@@ -46,7 +46,7 @@ Menyimpan visualisasi hasil analisis, preprocessing, evaluasi model, eksperimen,
 ## CARA MENJALANKAN
 Disarankan memakai Python 3.12.
 
-```
+```bash
 git clone https://github.com/lukito789/california-house-price-mlp.git
 cd california-house-price-mlp
 
