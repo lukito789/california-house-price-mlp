@@ -38,6 +38,7 @@ Target prediksi adalah `median_house_value`.
 - 04_eksperimen_optimasi.ipynb: Melakukan eksperimen dan pemilihan konfigurasi model final.
 - 05_fitur_unik_interval_prediksi.ipynb: Mengembangkan Conformal Prediction untuk menghasilkan interval prediksi.
 - 06_fitur_unik_deteksi_ood.ipynb: Mengembangkan deteksi input di luar distribusi data training.
+- 07_evaluasi_final.ipynb: berisi hasil evaluasi final
 
 **5.reports/**
 Menyimpan visualisasi hasil analisis, preprocessing, evaluasi model, eksperimen, interval prediksi, dan deteksi OOD.
@@ -63,6 +64,14 @@ pip install -r requirements.txt
 ```
 Buka folder repository di VSCode, pilih kernel .venv, lalu jalankan notebook di folder notebooks/ secara berurutan.
 
+## CARA MENJALANKAN APLIKASI streamlit_app.py secara local
+```
+streamlit run backend/streamlit_app.py
+```
+
+**Link aplikasi**
+Live Application:
+[California House Price Prediction](https://california-house-price-mlp.streamlit.app/)
 
 ## RINGKASAN PREPROCESSING
 
