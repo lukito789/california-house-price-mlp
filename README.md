@@ -125,15 +125,113 @@ Model menggunakan tiga hidden layers dengan konfigurasi sebagai berikut:
 | Batch Size | 64 |
 | Random Seed | 42 |
 
-### Evaluasi Model
 
-Evaluasi dilakukan menggunakan data testing yang tidak digunakan selama proses training maupun validasi.
+## HASIL EVALUASI FINAL
 
-| Metrik | Hasil |
+Evaluasi dilakukan untuk mengukur kemampuan model Multi-Layer Perceptron (MLP) dalam memprediksi harga median rumah di California. Pengujian menggunakan data testing yang tidak digunakan selama proses training maupun pemilihan model.
+
+### 1. Metrik Evaluasi
+
+Penelitian ini menggunakan tiga metrik evaluasi regresi, yaitu Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), dan R-Squared (R²).
+
+| Metrik | Hasil Testing | Keterangan |
+|---|---:|---|
+| MAE | $33,021.33 | Rata-rata kesalahan absolut prediksi |
+| RMSE | $49,394.59 | Mengukur kesalahan dengan penalti lebih besar pada error tinggi |
+| R² Score | 0.8212 | Model menjelaskan sekitar 82.12% variasi target |
+
+**Interpretasi:**
+
+- MAE sebesar $33,021.33 menunjukkan rata-rata selisih absolut antara harga aktual dan hasil prediksi model.
+- RMSE sebesar $49,394.59 menunjukkan bahwa kesalahan prediksi yang besar memberikan pengaruh lebih tinggi terhadap nilai evaluasi.
+- R² sebesar 0.8212 menunjukkan bahwa model mampu menjelaskan sekitar 82.12% variasi harga median rumah pada data testing.
+
+Accuracy, Precision, Recall, dan F1-Score tidak digunakan karena proyek ini merupakan permasalahan regresi dengan target berupa nilai harga kontinu.
+
+### 2. Pembagian Dataset
+
+Dataset dibagi menjadi tiga bagian untuk mendukung proses training, validasi, dan pengujian model.
+
+| Dataset | Jumlah Data | Persentase |
+|---|---:|---:|
+| Training | 14,447 | 70% |
+| Validation | 3,096 | 15% |
+| Testing | 3,097 | 15% |
+| **Total** | **20,640** | **100%** |
+
+Data training digunakan untuk melatih model. Data validation digunakan untuk memantau performa dan membantu pemilihan model. Data testing digunakan untuk mengevaluasi kemampuan generalisasi model pada data yang belum pernah digunakan sebelumnya.
+
+### 3. Perbandingan Skenario Eksperimen
+
+Eksperimen dilakukan pada Notebook 04 dengan pendekatan One-Factor-at-a-Time (OFAT). Setiap eksperimen mengubah satu faktor dari konfigurasi baseline.
+
+| Skenario | Validation MAE |
 |---|---:|
-| MAE | $33,021.33 |
-| RMSE | $49,394.59 |
-| R² Score | 0.821 |
+| Baseline | $32,371 |
+| Dropout 0.1 | $32,034 |
+| Arsitektur 256-128-64 | $31,535 |
+| Target Log Transformation | $31,442 |
+| Penambahan Fitur Rasio | $32,605 |
+| Learning Rate 0.01 | $35,798 |
+| Learning Rate 0.0003 | $34,975 |
+
+Hasil screening menunjukkan bahwa beberapa konfigurasi menghasilkan MAE validation yang lebih rendah daripada baseline. Namun, pemilihan model final juga mempertimbangkan variasi hasil antar-seed dan ambang peningkatan performa.
+
+Berdasarkan protokol eksperimen tersebut, konfigurasi baseline tetap dipilih sebagai model final karena kandidat lain tidak memenuhi kriteria peningkatan yang ditetapkan.
+
+### 4. Grafik Loss dan Performa Training-Validation
+
+Evaluasi proses pembelajaran menggunakan grafik Training Loss dan Validation Loss serta MAE Training dan Validation.
+
+Grafik digunakan untuk:
+- Mengamati perubahan kesalahan model selama proses training.
+- Membandingkan performa data training dan validation.
+- Mengidentifikasi indikasi overfitting atau underfitting.
+- Memeriksa kemampuan model dalam melakukan generalisasi.
+
+Karena model menggunakan regresi, MAE digunakan sebagai pendamping grafik loss, bukan accuracy.
+
+### 5. Fitur Tambahan: Conformal Prediction
+
+Model dilengkapi dengan Split Conformal Prediction untuk menghasilkan interval prediksi, bukan hanya satu estimasi harga.
+
+| Parameter | Hasil |
+|---|---:|
+| Metode | Relative Conformal Prediction |
+| Tingkat interval utama | 90% |
+| Alpha | 0.10 |
+| Data kalibrasi | 3,096 |
+| Cakupan pada data testing | 89.80% |
+| Lebar interval rata-rata | $145,836.25 |
+
+Conformal Prediction menghasilkan rentang estimasi harga yang membantu pengguna memahami ketidakpastian prediksi.
+
+Aplikasi menyediakan tiga tingkat interval, yaitu 80%, 90%, dan 95%.
+
+### 6. Fitur Tambahan: Out-of-Distribution Detection
+
+Aplikasi menggunakan metode Mahalanobis Distance untuk mendeteksi input yang memiliki karakteristik berbeda dari distribusi data training.
+
+| Parameter | Hasil |
+|---|---:|
+| Metode | Mahalanobis Distance |
+| Persentil threshold | 99 |
+| Nilai threshold | 7.2640 |
+| False Positive Rate Validation | 0.84% |
+
+Deteksi OOD membantu mengidentifikasi input yang tidak lazim dibandingkan data yang digunakan untuk melatih model.
+
+Jika nilai jarak Mahalanobis melebihi threshold, aplikasi memberikan peringatan bahwa input berada di luar domain data training. Hasil prediksi pada kondisi tersebut perlu ditafsirkan dengan hati-hati.
+
+### 7. Kesimpulan Evaluasi
+
+Berdasarkan hasil pengujian, model MLP final memperoleh MAE sebesar $33,021.33, RMSE sebesar $49,394.59, dan R² sebesar 0.8212 pada data testing.
+
+Model juga dilengkapi dengan Conformal Prediction untuk memberikan interval estimasi harga dan Out-of-Distribution Detection untuk mengidentifikasi input yang tidak sesuai dengan distribusi data training.
+
+Dengan demikian, aplikasi tidak hanya menghasilkan estimasi harga rumah, tetapi juga menyediakan informasi mengenai ketidakpastian prediksi dan karakteristik input yang diberikan pengguna.
+
+**Catatan:** Model memprediksi median harga rumah pada blok sensus berdasarkan data California tahun 1990. Hasil prediksi bukan estimasi harga pasar properti terkini.
 
 ### Fitur Tambahan Model
 
