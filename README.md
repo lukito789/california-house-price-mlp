@@ -42,21 +42,23 @@ Target prediksi adalah `median_house_value`.
 **5.reports/**
 Menyimpan visualisasi hasil analisis, preprocessing, evaluasi model, eksperimen, interval prediksi, dan deteksi OOD.
 
-```
+
 ## CARA MENJALANKAN
 Disarankan memakai Python 3.12.
 
-1. git clone https://github.com/lukito789/california-house-price-mlp.git
-2. cd california-house-price-mlp
-3. python -m venv .venv
-4. **Windows**
+```
+git clone https://github.com/lukito789/california-house-price-mlp.git
+cd california-house-price-mlp
 
- .venv\Scripts\activate
-- **macOS / Linux**
+python -m venv .venv
 
-  source .venv/bin/activate
+.venv\Scripts\activate
+# Windows
 
-6. - pip install -r requirements.txt
+source .venv/bin/activate
+# MacOS/Linux
+
+pip install -r requirements.txt
 
 ```
 Buka folder repository di VSCode, pilih kernel .venv, lalu jalankan notebook di folder notebooks/ secara berurutan.
