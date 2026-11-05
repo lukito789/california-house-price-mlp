@@ -64,7 +64,7 @@ pip install -r requirements.txt
 ```
 Buka folder repository di VSCode, pilih kernel .venv, lalu jalankan notebook di folder notebooks/ secara berurutan.
 
-## CARA MENJALANKAN APLIKASI streamlit_app.py secara local
+## CARA MENJALANKAN APLIKASI streamlit_app.py
 ```
 streamlit run backend/streamlit_app.py
 ```
