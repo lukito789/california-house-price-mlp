@@ -69,9 +69,33 @@ pip install -r requirements.txt
 Buka folder repository di VSCode, pilih kernel .venv, lalu jalankan notebook di folder notebooks/ secara berurutan.
 
 ## CARA MENJALANKAN APLIKASI streamlit_app.py
+
+1.cd ke folder california-house-price-mlp berada
+2.
+```
+.venv\Scripts\activate
+# Windows
+
+source .venv/bin/activate
+# MacOS/Linux
+
+```
+3.Lalu cek apakah streamlit sudah ada dengan 
+```
+pip show streamlit
+```
+4.Jika muncul Warning: Package(s) not found,jalankan perintah berikut:
+```
+pip install streamlit
+```
+4.Lalu jalankanL:
 ```
 streamlit run backend/streamlit_app.py
 ```
+
+Maka stramlit akan berjalan di http://localhost:8501.
+
+Perintah diatas masih dijalankan dalam bentuk lokal,apabila aplikasi tersebut ingin dijalankan dicloud silahkan klik link dibawah
 
 **Link aplikasi**
 Live Application:
