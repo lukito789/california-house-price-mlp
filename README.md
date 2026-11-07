@@ -89,7 +89,7 @@ pip show streamlit
 ```
 pip install streamlit
 ```
-4.Lalu jalankanL:
+4.Lalu jalankan:
 ```
 streamlit run backend/streamlit_app.py
 ```
