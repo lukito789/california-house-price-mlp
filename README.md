@@ -71,6 +71,7 @@ Buka folder repository di VSCode, pilih kernel .venv, lalu jalankan notebook di 
 ## CARA MENJALANKAN APLIKASI streamlit_app.py
 
 1.cd ke folder california-house-price-mlp berada
+
 2.
 ```
 .venv\Scripts\activate
@@ -93,7 +94,7 @@ pip install streamlit
 streamlit run backend/streamlit_app.py
 ```
 
-Maka stramlit akan berjalan di http://localhost:8501.
+Maka streamlit akan berjalan di http://localhost:8501.
 
 Perintah diatas masih dijalankan dalam bentuk lokal,apabila aplikasi tersebut ingin dijalankan dicloud silahkan klik link dibawah
 
